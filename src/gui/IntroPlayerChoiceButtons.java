@@ -1,31 +1,36 @@
 package gui;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
 public class IntroPlayerChoiceButtons extends JPanel
 {
-    private final static int numButtons = 3;
     
-    private ButtonGroup buttonGroup = new ButtonGroup();
+    private JLabel text = new JLabel("Choose a play mode:");
     
-    private JRadioButton playerVsPlayerButton = new JRadioButton("Player vs. Player");
+    protected ButtonGroup buttonGroup = new ButtonGroup();
     
-    private JRadioButton playerVsRandomCompButton = new JRadioButton("Player vs. Random Computer");
+    protected JRadioButton playerVsPlayerButton = new JRadioButton("Player vs. Player");
     
-    private JRadioButton playerVsSmartCompButton = new JRadioButton("Player vs. Smart Computer");
+    protected JRadioButton playerVsRandomCompButton = new JRadioButton("Player vs. Random Computer");
+    
+    protected JRadioButton playerVsSmartCompButton = new JRadioButton("Player vs. Smart Computer");
     
     public IntroPlayerChoiceButtons()
     {
-        super(new GridLayout(1,numButtons));
+        super(new GridLayout());
         
         buttonGroup.add(playerVsPlayerButton);
         buttonGroup.add(playerVsRandomCompButton);
         buttonGroup.add(playerVsSmartCompButton);
         
+        add(text);
         add(playerVsPlayerButton);
         add(playerVsRandomCompButton);
         add(playerVsSmartCompButton);
